@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    float speed;    
+    float speed;
+    float xMove, yMove;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,6 @@ public class PlayerController : MonoBehaviour
 
     void WalkAround()
     {
-
+        transform.position = 
     }
 }
