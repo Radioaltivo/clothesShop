@@ -18,11 +18,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        WalkAround();
     }
 
     void WalkAround()
     {
-        transform.position = 
+        xMove = Input.GetAxisRaw("Horizontal");
+        yMove = Input.GetAxisRaw("Vertical");
+        transform.position += new Vector3(xMove*speed, yMove*speed, 0);
     }
 }
