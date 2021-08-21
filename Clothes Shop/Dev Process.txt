@@ -1,1 +1,10 @@
 This is a simple documentation of the development process of a Small-Scale Clothes Shop Sim
+
+I'm using assets from Kenney https://www.kenney.nl/ which I generally use for prototypes and placeholder
+
+First I built a simple room using the tiled assets. The idea is to spread the clothes around like a department store.
+To keep clothing replacement as simple as possible, I just sliced the tilemap keeping each clothing piece with the same size, so I can just switch them up vioa code. Ideally, I'd have a tilesheet for each clothing piece and slice them by fixed amounts, but for a prototype my process will be enough.
+
+The character will have very simple movements using transform, as I only need collision calculation and not much else from the Physics package. I'll also keep the UI to a minimum as I like this kind of aesthetic.
+
+
