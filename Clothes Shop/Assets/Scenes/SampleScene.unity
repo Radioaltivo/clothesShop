@@ -12733,7 +12733,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd79121b59c74a429008ca9ccd1396e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.001
+  speed: 0.003
+  shirt: {fileID: 436069619}
+  hat: {fileID: 1052214686}
+  pants: {fileID: 1617401864}
 --- !u!4 &1204667066
 Transform:
   m_ObjectHideFlags: 0
@@ -15672,7 +15675,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617401862}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0799, y: -0.125, z: 0}
+  m_LocalPosition: {x: -0.0003, y: -0.0896, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1204667066}
@@ -15718,7 +15721,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5128114368248070699, guid: b0a10fa70cd627042a20beb4505686cc, type: 3}
+  m_Sprite: {fileID: 5665515680797710778, guid: b0a10fa70cd627042a20beb4505686cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

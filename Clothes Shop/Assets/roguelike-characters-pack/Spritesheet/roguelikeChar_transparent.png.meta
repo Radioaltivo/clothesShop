@@ -3676,10 +3676,10 @@ TextureImporter:
       name: roguelikeChar_transparent_114
       rect:
         serializedVersion: 2
-        x: 532
-        y: 147
-        width: 8
-        height: 5
+        x: 528
+        y: 146
+        width: 16
+        height: 8
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6448,10 +6448,10 @@ TextureImporter:
       name: roguelikeChar_transparent_246
       rect:
         serializedVersion: 2
-        x: 174
-        y: 86
-        width: 10
-        height: 8
+        x: 171
+        y: 85
+        width: 16
+        height: 9
       alignment: 1
       pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7268,7 +7268,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 477
-        y: 76
+        y: 78
         width: 16
         height: 8
       alignment: 1
@@ -7289,7 +7289,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 494
-        y: 76
+        y: 78
         width: 16
         height: 8
       alignment: 1
@@ -7310,7 +7310,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 511
-        y: 76
+        y: 78
         width: 16
         height: 8
       alignment: 1
@@ -7331,7 +7331,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 528
-        y: 76
+        y: 78
         width: 16
         height: 8
       alignment: 1

@@ -6,9 +6,10 @@ public class ShopItemData : ScriptableObject
     public enum ItemType
     {
         Hat,
-        Chest,
+        Shirt,
         Pants
     }
+    public ItemType itemType;
     public int itemBaseValue;
     public Sprite itemSprite;
 }

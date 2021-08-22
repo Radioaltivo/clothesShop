@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClothesController : MonoBehaviour
 {
-    [SerializeField] ShopItemData itemData;
+    public ShopItemData itemData;
     [SerializeField] SpriteRenderer mySpriteRenderer;
 
     // Start is called before the first frame update

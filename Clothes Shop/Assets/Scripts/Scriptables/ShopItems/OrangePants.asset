@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90f52567335dd34dbee5a26b0065f0e, type: 3}
   m_Name: OrangePants
   m_EditorClassIdentifier: 
+  itemType: 2
   itemBaseValue: 3
   itemSprite: {fileID: 2488080495844146584, guid: b0a10fa70cd627042a20beb4505686cc, type: 3}
