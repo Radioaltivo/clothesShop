@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BlueShirt
   m_EditorClassIdentifier: 
   itemType: 1
-  itemBaseValue: 10
+  itemBaseValue: 28
   itemSprite: {fileID: -146784520314977075, guid: b0a10fa70cd627042a20beb4505686cc, type: 3}

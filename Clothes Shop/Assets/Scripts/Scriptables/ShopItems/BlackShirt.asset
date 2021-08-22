@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BlackShirt
   m_EditorClassIdentifier: 
   itemType: 1
-  itemBaseValue: 10
+  itemBaseValue: 22
   itemSprite: {fileID: 2699561613989223489, guid: b0a10fa70cd627042a20beb4505686cc, type: 3}

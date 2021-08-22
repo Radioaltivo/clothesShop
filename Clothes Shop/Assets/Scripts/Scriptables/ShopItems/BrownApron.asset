@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BrownApron
   m_EditorClassIdentifier: 
   itemType: 1
-  itemBaseValue: 10
+  itemBaseValue: 16
   itemSprite: {fileID: -8925399636706838589, guid: b0a10fa70cd627042a20beb4505686cc, type: 3}

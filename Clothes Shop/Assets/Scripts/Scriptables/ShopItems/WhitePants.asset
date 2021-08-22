@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: WhitePants
   m_EditorClassIdentifier: 
   itemType: 2
-  itemBaseValue: 5
+  itemBaseValue: 27
   itemSprite: {fileID: -4707205993566250926, guid: b0a10fa70cd627042a20beb4505686cc, type: 3}

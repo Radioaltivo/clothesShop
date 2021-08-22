@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: OrangePants
   m_EditorClassIdentifier: 
   itemType: 2
-  itemBaseValue: 3
+  itemBaseValue: 18
   itemSprite: {fileID: 2488080495844146584, guid: b0a10fa70cd627042a20beb4505686cc, type: 3}

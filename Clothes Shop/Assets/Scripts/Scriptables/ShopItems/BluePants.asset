@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BluePants
   m_EditorClassIdentifier: 
   itemType: 2
-  itemBaseValue: 5
+  itemBaseValue: 19
   itemSprite: {fileID: 4556968735709949648, guid: b0a10fa70cd627042a20beb4505686cc, type: 3}

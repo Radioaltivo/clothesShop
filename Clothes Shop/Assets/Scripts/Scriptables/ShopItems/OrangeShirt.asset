@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: OrangeShirt
   m_EditorClassIdentifier: 
   itemType: 1
-  itemBaseValue: 10
+  itemBaseValue: 19
   itemSprite: {fileID: 4603628239155966001, guid: b0a10fa70cd627042a20beb4505686cc, type: 3}

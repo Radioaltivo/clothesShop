@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GreenPants
   m_EditorClassIdentifier: 
   itemType: 2
-  itemBaseValue: 4
+  itemBaseValue: 23
   itemSprite: {fileID: -8503143199325220528, guid: b0a10fa70cd627042a20beb4505686cc, type: 3}
