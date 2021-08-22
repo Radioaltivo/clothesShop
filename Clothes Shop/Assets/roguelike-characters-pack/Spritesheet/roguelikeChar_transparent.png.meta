@@ -1196,6 +1196,9 @@ TextureImporter:
   - first:
       213: 6636785618485934315
     second: roguelikeChar_transparent_397
+  - first:
+      213: -603589096485118645
+    second: roguelikeChar_transparent_398
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -9112,12 +9115,12 @@ TextureImporter:
       name: roguelikeChar_transparent_373
       rect:
         serializedVersion: 2
-        x: 55
-        y: 187
-        width: 10
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 52
+        y: 167
+        width: 16
+        height: 9
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -9133,10 +9136,10 @@ TextureImporter:
       name: roguelikeChar_transparent_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 187
-        width: 10
-        height: 1
+        x: 69
+        y: 184
+        width: 16
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -9154,10 +9157,10 @@ TextureImporter:
       name: roguelikeChar_transparent_374
       rect:
         serializedVersion: 2
-        x: 55
-        y: 170
-        width: 10
-        height: 3
+        x: 69
+        y: 167
+        width: 16
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -9175,12 +9178,12 @@ TextureImporter:
       name: roguelikeChar_transparent_375
       rect:
         serializedVersion: 2
-        x: 72
-        y: 170
-        width: 10
-        height: 1
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 52
+        y: 150
+        width: 16
+        height: 9
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -9196,10 +9199,10 @@ TextureImporter:
       name: roguelikeChar_transparent_376
       rect:
         serializedVersion: 2
-        x: 55
-        y: 153
-        width: 10
-        height: 3
+        x: 69
+        y: 150
+        width: 16
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -9217,12 +9220,12 @@ TextureImporter:
       name: roguelikeChar_transparent_377
       rect:
         serializedVersion: 2
-        x: 72
-        y: 153
-        width: 10
-        height: 1
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 52
+        y: 99
+        width: 16
+        height: 9
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -9238,12 +9241,12 @@ TextureImporter:
       name: roguelikeChar_transparent_378
       rect:
         serializedVersion: 2
-        x: 55
-        y: 136
-        width: 10
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 52
+        y: 133
+        width: 16
+        height: 9
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -9343,12 +9346,12 @@ TextureImporter:
       name: roguelikeChar_transparent_383
       rect:
         serializedVersion: 2
-        x: 55
-        y: 102
-        width: 10
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 52
+        y: 82
+        width: 16
+        height: 9
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -9364,12 +9367,12 @@ TextureImporter:
       name: roguelikeChar_transparent_384
       rect:
         serializedVersion: 2
-        x: 55
-        y: 85
-        width: 10
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 52
+        y: 65
+        width: 16
+        height: 9
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -9403,27 +9406,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roguelikeChar_transparent_386
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 68
-        width: 10
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2469098a592cd300800000000000000
-      internalID: 278142745813017644
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: roguelikeChar_transparent_387
       rect:
         serializedVersion: 2
@@ -9448,12 +9430,12 @@ TextureImporter:
       name: roguelikeChar_transparent_388
       rect:
         serializedVersion: 2
-        x: 55
-        y: 51
-        width: 10
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 52
+        y: 48
+        width: 16
+        height: 9
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -9650,6 +9632,27 @@ TextureImporter:
       bones: []
       spriteID: be876485b599a1c50800000000000000
       internalID: 6636785618485934315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeChar_transparent_398
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 184
+        width: 16
+        height: 9
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d94b92aee9f97f0800000000000000
+      internalID: -603589096485118645
       vertices: []
       indices: 
       edges: []
