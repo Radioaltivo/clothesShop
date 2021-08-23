@@ -43,24 +43,27 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        WalkAround();
-        ActionButton();
+        
+        DetectInputs();
 
     }
+
+    private void FixedUpdate()
+    {
+        WalkAround();
+    }
     void WalkAround()
+    {
+
+        transform.position += new Vector3(xMove * speed * Time.deltaTime, yMove * speed*Time.deltaTime, 0);
+    }
+
+    void DetectInputs()
     {
         if (inputsEnabled)
         {
             xMove = Input.GetAxisRaw("Horizontal");
             yMove = Input.GetAxisRaw("Vertical");
-            transform.position += new Vector3(xMove * speed, yMove * speed, 0);
-        }
-    }
-
-    void ActionButton()
-    {
-        if (inputsEnabled)
-        {
             if (Input.GetButtonDown("Jump"))
             {
                 if (isTalkingToShopkeeper)

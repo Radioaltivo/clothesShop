@@ -14271,7 +14271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd79121b59c74a429008ca9ccd1396e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.0015
+  speed: 0.8
   currentMoney: 100
   moneyToSpend: 0
   ownedShirt: {fileID: 11400000, guid: 403622ab82959d64e9d9d28bd5efe00f, type: 2}
@@ -18468,7 +18468,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10.75
+  m_fontSize: 10
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -20958,7 +20958,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.3
+  m_fontSize: 14.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
