@@ -6,6 +6,7 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     UIManager uiManager;
+    ShopManager shopManager;
     float xMove, yMove;
     
     [Header("Fields")]
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int currentMoney, moneyToSpend;
     //clothes owned before arriving at the store
     [SerializeField] ShopItemData ownedShirt, ownedHat, ownedPants;
+    [SerializeField] Color floatingPriceYellow, floatingPriceRed;
 
     [Header("References")]
     [SerializeField] TextMeshPro floatingPriceTMP;    
@@ -24,11 +26,13 @@ public class PlayerController : MonoBehaviour
     ShopItemData newEquippedShirt, newEquippedHat, newEquippedPants;
 
     bool isTalkingToShopkeeper = false;
+    bool inputsEnabled = false;
 
     // Start is called before the first frame update
     void Start()
     {
         uiManager = UIManager.instance;
+        shopManager = ShopManager.instance;
         EquipNewClothes(ownedShirt);
         EquipNewClothes(ownedHat);
         EquipNewClothes(ownedPants);
@@ -45,22 +49,28 @@ public class PlayerController : MonoBehaviour
     }
     void WalkAround()
     {
-        xMove = Input.GetAxisRaw("Horizontal");
-        yMove = Input.GetAxisRaw("Vertical");
-        transform.position += new Vector3(xMove*speed, yMove*speed, 0);
+        if (inputsEnabled)
+        {
+            xMove = Input.GetAxisRaw("Horizontal");
+            yMove = Input.GetAxisRaw("Vertical");
+            transform.position += new Vector3(xMove * speed, yMove * speed, 0);
+        }
     }
 
     void ActionButton()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (inputsEnabled)
         {
-            if (isTalkingToShopkeeper)
+            if (Input.GetButtonDown("Jump"))
             {
-                PurchaseItems();
-            }
-            else if (currentTableItemData != null)
-            {
-                EquipNewClothes(currentTableItemData);
+                if (isTalkingToShopkeeper)
+                {
+                    PurchaseItems();
+                }
+                else if (currentTableItemData != null)
+                {
+                    EquipNewClothes(currentTableItemData);
+                }
             }
         }
     }
@@ -76,6 +86,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (moneyToSpend + itemData.itemBaseValue <= currentMoney)
                 {
+                    SetFloatingPriceColor(floatingPriceYellow);
                     if (newEquippedShirt != null)
                     {
                         moneyToSpend -= newEquippedShirt.itemBaseValue;
@@ -83,6 +94,10 @@ public class PlayerController : MonoBehaviour
                     shirt.sprite = itemData.itemSprite;
                     newEquippedShirt = itemData;
                     moneyToSpend += itemData.itemBaseValue;
+                }
+                else
+                {
+                    SetFloatingPriceColor(floatingPriceRed);
                 }
             }
             else
@@ -98,6 +113,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (moneyToSpend + itemData.itemBaseValue <= currentMoney)
                 {
+                    SetFloatingPriceColor(floatingPriceYellow);
                     if (newEquippedPants != null)
                     {
                         moneyToSpend -= newEquippedPants.itemBaseValue;
@@ -105,6 +121,10 @@ public class PlayerController : MonoBehaviour
                     pants.sprite = itemData.itemSprite;
                     newEquippedPants = itemData;
                     moneyToSpend += itemData.itemBaseValue;
+                }
+                else
+                {
+                    SetFloatingPriceColor(floatingPriceRed);
                 }
             }
             else
@@ -120,6 +140,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (moneyToSpend + itemData.itemBaseValue <= currentMoney)
                 {
+                    SetFloatingPriceColor(floatingPriceYellow);
                     if (newEquippedHat != null)
                     {
                         moneyToSpend -= newEquippedHat.itemBaseValue;
@@ -128,7 +149,12 @@ public class PlayerController : MonoBehaviour
                     newEquippedHat = itemData;
                     moneyToSpend += itemData.itemBaseValue;
                 }
+                else
+                {
+                    SetFloatingPriceColor(floatingPriceRed);
+                }
             }
+
             else
             {
                 hat.sprite = ownedHat.itemSprite;
@@ -153,6 +179,11 @@ public class PlayerController : MonoBehaviour
         {
             isTalkingToShopkeeper = true;
         }
+        else if (collision.CompareTag("Door"))
+        {
+            uiManager.OpenEndgamePanel();
+            ToggleInputs(false);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -171,9 +202,15 @@ public class PlayerController : MonoBehaviour
 
 
     public void UpdateFloatingPrice(int amount)
-    {
+    {       
+
         floatingPriceTMP.gameObject.SetActive(true);
         floatingPriceTMP.text = amount.ToString();
+    }
+
+    void SetFloatingPriceColor(Color color)
+    {
+        floatingPriceTMP.color = color;
     }
 
     public void DisableFloatingPrice()
@@ -191,16 +228,27 @@ public class PlayerController : MonoBehaviour
         if (newEquippedHat != null)
         {
             ownedHat = newEquippedHat;
+            newEquippedHat.itemBaseValue = 0;
+            shopManager.DestroyClothesSold(newEquippedHat);
         }
         if (newEquippedPants != null)
         {
             ownedPants = newEquippedPants;
+            newEquippedPants.itemBaseValue = 0;
+            shopManager.DestroyClothesSold(newEquippedPants);
         }
         if (newEquippedShirt != null)
         {
             ownedShirt = newEquippedShirt;
+            newEquippedShirt.itemBaseValue = 0;
+            shopManager.DestroyClothesSold(newEquippedShirt);
         }
 
 
+    }
+
+    public void ToggleInputs(bool enable)
+    {
+        inputsEnabled = enable;
     }
 }

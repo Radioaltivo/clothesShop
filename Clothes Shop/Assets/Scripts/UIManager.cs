@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI currentMoneyTMP;
     [SerializeField] TextMeshProUGUI moneyToSpendTMP;
-
+    [SerializeField] GameObject endgamePanel;
 
     private void Awake()
     {
@@ -46,4 +46,18 @@ public class UIManager : MonoBehaviour
         currentMoneyTMP.text = amount.ToString();
     } 
 
+    public void OpenEndgamePanel()
+    {
+        endgamePanel.SetActive(true);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
