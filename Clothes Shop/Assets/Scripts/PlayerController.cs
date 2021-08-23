@@ -22,16 +22,13 @@ public class PlayerController : MonoBehaviour
     ShopItemData currentTableItemData;
     //keep the references of equipped items for purchasing
     ShopItemData newEquippedShirt, newEquippedHat, newEquippedPants;
-    
 
+    bool isTalkingToShopkeeper = false;
 
     // Start is called before the first frame update
     void Start()
     {
         uiManager = UIManager.instance;
-        //newEquippedShirt = ownedShirt;
-        //newEquippedHat = ownedHat;
-        //newEquippedPants = ownedPants;
         EquipNewClothes(ownedShirt);
         EquipNewClothes(ownedHat);
         EquipNewClothes(ownedPants);
@@ -57,7 +54,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            if (currentTableItemData != null)
+            if (isTalkingToShopkeeper)
+            {
+                PurchaseItems();
+            }
+            else if (currentTableItemData != null)
             {
                 EquipNewClothes(currentTableItemData);
             }
@@ -73,13 +74,16 @@ public class PlayerController : MonoBehaviour
         {
             if (newEquippedShirt != itemData)
             {
-                if (newEquippedShirt != null)
+                if (moneyToSpend + itemData.itemBaseValue <= currentMoney)
                 {
-                    moneyToSpend -= newEquippedShirt.itemBaseValue;
+                    if (newEquippedShirt != null)
+                    {
+                        moneyToSpend -= newEquippedShirt.itemBaseValue;
+                    }
+                    shirt.sprite = itemData.itemSprite;
+                    newEquippedShirt = itemData;
+                    moneyToSpend += itemData.itemBaseValue;
                 }
-                shirt.sprite = itemData.itemSprite;
-                newEquippedShirt = itemData;
-                moneyToSpend += itemData.itemBaseValue;
             }
             else
             {
@@ -92,13 +96,16 @@ public class PlayerController : MonoBehaviour
         {
             if (newEquippedPants != itemData)
             {
-                if (newEquippedPants != null)
+                if (moneyToSpend + itemData.itemBaseValue <= currentMoney)
                 {
-                    moneyToSpend -= newEquippedPants.itemBaseValue;
+                    if (newEquippedPants != null)
+                    {
+                        moneyToSpend -= newEquippedPants.itemBaseValue;
+                    }
+                    pants.sprite = itemData.itemSprite;
+                    newEquippedPants = itemData;
+                    moneyToSpend += itemData.itemBaseValue;
                 }
-                pants.sprite = itemData.itemSprite;
-                newEquippedPants = itemData;
-                moneyToSpend += itemData.itemBaseValue;
             }
             else
             {
@@ -111,13 +118,16 @@ public class PlayerController : MonoBehaviour
         {
             if (newEquippedHat != itemData)
             {
-                if (newEquippedHat != null)
+                if (moneyToSpend + itemData.itemBaseValue <= currentMoney)
                 {
-                    moneyToSpend -= newEquippedHat.itemBaseValue;
+                    if (newEquippedHat != null)
+                    {
+                        moneyToSpend -= newEquippedHat.itemBaseValue;
+                    }
+                    hat.sprite = itemData.itemSprite;
+                    newEquippedHat = itemData;
+                    moneyToSpend += itemData.itemBaseValue;
                 }
-                hat.sprite = itemData.itemSprite;
-                newEquippedHat = itemData;
-                moneyToSpend += itemData.itemBaseValue;
             }
             else
             {
@@ -133,14 +143,30 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        currentTableItemData = collision.gameObject.GetComponentInParent<ClothesController>().itemData;
-        UpdateFloatingPrice(currentTableItemData.itemBaseValue);
+        if (collision.CompareTag("Clothes"))
+        {
+
+            currentTableItemData = collision.gameObject.GetComponentInParent<ClothesController>().itemData;
+            UpdateFloatingPrice(currentTableItemData.itemBaseValue);
+        }
+        else if (collision.CompareTag("Shopkeeper"))
+        {
+            isTalkingToShopkeeper = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        currentTableItemData = null;
-        DisableFloatingPrice();
+        if (collision.CompareTag("Clothes"))
+        {
+
+            currentTableItemData = null;
+            DisableFloatingPrice();
+        }
+        else if (collision.CompareTag("Shopkeeper"))
+        {
+            isTalkingToShopkeeper = false;
+        }
     }
 
 
@@ -153,5 +179,28 @@ public class PlayerController : MonoBehaviour
     public void DisableFloatingPrice()
     {
         floatingPriceTMP.gameObject.SetActive(false);
+    }
+
+    void PurchaseItems()
+    {
+        currentMoney -= moneyToSpend;
+        moneyToSpend = 0;
+        uiManager.UpdateMoney(currentMoney);
+        uiManager.UpdateMoneyToSpend(moneyToSpend);
+
+        if (newEquippedHat != null)
+        {
+            ownedHat = newEquippedHat;
+        }
+        if (newEquippedPants != null)
+        {
+            ownedPants = newEquippedPants;
+        }
+        if (newEquippedShirt != null)
+        {
+            ownedShirt = newEquippedShirt;
+        }
+
+
     }
 }
